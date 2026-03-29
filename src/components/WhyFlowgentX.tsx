@@ -39,26 +39,26 @@ const reasons = [
 
 export default function WhyFlowgentX() {
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-4">
+    <section className="py-28 px-6 bg-dark-50">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-semibold text-dark-800 tracking-tight mb-5">
             Built for Enterprise
           </h2>
-          <p className="text-lg text-dark-400 max-w-2xl mx-auto">
+          <p className="text-lg text-dark-400 max-w-2xl mx-auto font-light leading-relaxed">
             The trust and control your organization needs to adopt AI confidently.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-5">
           {reasons.map((r) => (
-            <div key={r.title} className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center">
+            <div key={r.title} className="flex gap-5 rounded-2xl p-7 bg-white hover:shadow-lg transition-all duration-300 group">
+              <div className="flex-shrink-0 w-11 h-11 rounded-full bg-dark-50 text-dark-500 group-hover:text-primary-600 flex items-center justify-center transition-colors duration-300">
                 {r.icon}
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-dark-800 mb-1">{r.title}</h3>
-                <p className="text-dark-400 text-sm leading-relaxed">{r.description}</p>
+                <h3 className="text-lg font-semibold text-dark-800 mb-2 tracking-tight">{r.title}</h3>
+                <p className="text-dark-400 text-sm leading-relaxed font-light">{r.description}</p>
               </div>
             </div>
           ))}

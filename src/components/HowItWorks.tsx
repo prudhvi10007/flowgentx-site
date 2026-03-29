@@ -21,30 +21,23 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how" className="py-20 px-6 bg-dark-50">
+    <section id="how" className="py-28 px-6 bg-dark-900">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-4">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight mb-5">
             Up and Running in Minutes
           </h2>
-          <p className="text-lg text-dark-400 max-w-2xl mx-auto">
+          <p className="text-lg text-dark-300 max-w-2xl mx-auto font-light leading-relaxed">
             Three simple steps to your first AI agent.
           </p>
         </div>
 
-        <div className="space-y-8">
-          {steps.map((s, i) => (
-            <div key={s.step} className="flex gap-6 items-start">
-              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary-600 text-white flex items-center justify-center text-lg font-bold">
-                {s.step}
-              </div>
-              <div className="pt-2">
-                <h3 className="text-xl font-semibold text-dark-800 mb-2">{s.title}</h3>
-                <p className="text-dark-400 leading-relaxed">{s.description}</p>
-                {i < steps.length - 1 && (
-                  <div className="w-px h-8 bg-primary-200 ml-7 mt-4 hidden md:block" />
-                )}
-              </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {steps.map((s) => (
+            <div key={s.step} className="text-center">
+              <div className="text-5xl font-bold text-primary-400/30 mb-6">{s.step}</div>
+              <h3 className="text-xl font-semibold text-white mb-3 tracking-tight">{s.title}</h3>
+              <p className="text-dark-300 leading-relaxed font-light text-sm">{s.description}</p>
             </div>
           ))}
         </div>

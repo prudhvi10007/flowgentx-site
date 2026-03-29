@@ -57,29 +57,27 @@ const items = [
 
 export default function Security() {
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-primary-600 font-semibold text-sm uppercase tracking-wide mb-3">Security & Compliance</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-4">
+    <section className="py-28 px-6 bg-white">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-20">
+          <p className="text-primary-600 font-medium text-sm tracking-widest uppercase mb-4">Security & Compliance</p>
+          <h2 className="text-4xl md:text-5xl font-semibold text-dark-800 tracking-tight mb-5">
             Built for Regulated Industries
           </h2>
-          <p className="text-lg text-dark-400 max-w-2xl mx-auto">
+          <p className="text-lg text-dark-400 max-w-2xl mx-auto font-light leading-relaxed">
             Healthcare, finance, government — FlowgentX meets the security and compliance
             requirements your organization demands.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((item) => (
-            <div key={item.title} className="flex gap-4 p-6 rounded-xl border border-dark-100 hover:border-primary-200 transition">
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center">
+            <div key={item.title} className="rounded-2xl p-7 bg-dark-50 hover:bg-dark-100/80 transition-all duration-300 group">
+              <div className="w-10 h-10 rounded-full bg-white text-dark-500 group-hover:text-primary-600 flex items-center justify-center mb-5 shadow-sm transition-colors duration-300">
                 {item.icon}
               </div>
-              <div>
-                <h3 className="text-base font-semibold text-dark-800 mb-1">{item.title}</h3>
-                <p className="text-dark-400 text-sm leading-relaxed">{item.description}</p>
-              </div>
+              <h3 className="text-base font-semibold text-dark-800 mb-2 tracking-tight">{item.title}</h3>
+              <p className="text-dark-400 text-sm leading-relaxed font-light">{item.description}</p>
             </div>
           ))}
         </div>

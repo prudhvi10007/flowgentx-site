@@ -36,57 +36,57 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section className="py-20 px-6 bg-dark-50">
+    <section id="pricing" className="py-28 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-primary-600 font-semibold text-sm uppercase tracking-wide mb-3">Pricing</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-4">
+        <div className="text-center mb-20">
+          <p className="text-primary-600 font-medium text-sm tracking-widest uppercase mb-4">Pricing</p>
+          <h2 className="text-4xl md:text-5xl font-semibold text-dark-800 tracking-tight mb-5">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-lg text-dark-400 max-w-2xl mx-auto">
+          <p className="text-lg text-dark-400 max-w-2xl mx-auto font-light leading-relaxed">
             The full platform is free to self-host. Enterprise support available for teams that need it.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-xl p-8 border-2 ${
+              className={`rounded-2xl p-8 transition-all duration-300 ${
                 plan.highlighted
-                  ? "border-primary-500 bg-white shadow-lg shadow-primary-600/10"
-                  : "border-dark-100 bg-white"
+                  ? "bg-dark-900 text-white shadow-2xl shadow-dark-900/20 scale-[1.02]"
+                  : "bg-dark-50"
               }`}
             >
               {plan.highlighted && (
-                <div className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-4">
+                <div className="text-xs font-medium text-primary-400 uppercase tracking-widest mb-4">
                   Recommended
                 </div>
               )}
-              <h3 className="text-xl font-bold text-dark-800">{plan.name}</h3>
-              <div className="mt-3 mb-1">
-                <span className="text-4xl font-bold text-dark-800">{plan.price}</span>
-                <span className="text-sm text-dark-400 ml-1">/ {plan.period}</span>
+              <h3 className={`text-xl font-semibold tracking-tight ${plan.highlighted ? "text-white" : "text-dark-800"}`}>{plan.name}</h3>
+              <div className="mt-4 mb-2">
+                <span className={`text-4xl font-semibold tracking-tight ${plan.highlighted ? "text-white" : "text-dark-800"}`}>{plan.price}</span>
+                <span className={`text-sm ml-2 ${plan.highlighted ? "text-dark-300" : "text-dark-400"}`}>/ {plan.period}</span>
               </div>
-              <p className="text-sm text-dark-400 mb-6">{plan.description}</p>
+              <p className={`text-sm mb-8 ${plan.highlighted ? "text-dark-300" : "text-dark-400"} font-light`}>{plan.description}</p>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3.5 mb-8">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-dark-600">
-                    <svg className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <li key={f} className={`flex items-start gap-3 text-sm ${plan.highlighted ? "text-dark-200" : "text-dark-500"}`}>
+                    <svg className={`w-4 h-4 flex-shrink-0 mt-0.5 ${plan.highlighted ? "text-primary-400" : "text-primary-600"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    {f}
+                    <span className="font-light">{f}</span>
                   </li>
                 ))}
               </ul>
 
               <a
                 href={plan.ctaHref}
-                className={`block text-center py-3 rounded-lg font-semibold text-sm transition ${
+                className={`block text-center py-3 rounded-full font-medium text-sm transition-all ${
                   plan.highlighted
-                    ? "bg-primary-600 text-white hover:bg-primary-700"
-                    : "border border-dark-200 text-dark-600 hover:bg-dark-50"
+                    ? "bg-white text-dark-900 hover:bg-dark-100"
+                    : "bg-dark-900 text-white hover:bg-dark-800"
                 }`}
               >
                 {plan.cta}

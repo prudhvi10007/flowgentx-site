@@ -43,29 +43,31 @@ const problems = [
 
 export default function Problem() {
   return (
-    <section id="problem" className="py-20 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-primary-600 font-semibold text-sm uppercase tracking-wide mb-3">The Challenge</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-4">
-            Enterprise AI Adoption Is Harder Than It Should Be
+    <section id="problem" className="py-28 px-6 bg-white">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-20">
+          <p className="text-primary-600 font-medium text-sm tracking-widest uppercase mb-4">The Challenge</p>
+          <h2 className="text-4xl md:text-5xl font-semibold text-dark-800 tracking-tight mb-5">
+            Enterprise AI Adoption Is Harder
+            <br className="hidden md:block" />
+            Than It Should Be
           </h2>
-          <p className="text-lg text-dark-400 max-w-2xl mx-auto">
+          <p className="text-lg text-dark-400 max-w-2xl mx-auto font-light leading-relaxed">
             Most organizations face the same barriers when trying to move AI from proof-of-concept to production.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-5">
           {problems.map((p) => (
             <div
               key={p.title}
-              className="bg-dark-50 rounded-xl p-8 border border-dark-100 hover:border-primary-200 transition"
+              className="rounded-2xl p-8 bg-dark-50 hover:bg-dark-100/80 transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mb-4">
+              <div className="w-10 h-10 rounded-full bg-white text-dark-500 flex items-center justify-center mb-5 shadow-sm">
                 {p.icon}
               </div>
-              <h3 className="text-lg font-semibold text-dark-800 mb-2">{p.title}</h3>
-              <p className="text-dark-400 text-sm leading-relaxed">{p.description}</p>
+              <h3 className="text-lg font-semibold text-dark-800 mb-2 tracking-tight">{p.title}</h3>
+              <p className="text-dark-400 text-sm leading-relaxed font-light">{p.description}</p>
             </div>
           ))}
         </div>
